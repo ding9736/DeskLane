@@ -59,67 +59,60 @@ DeskLane 采用自研的 **Direct Transport** 传输技术栈，专为远程桌�
 
 ## 推荐安装方式
 
-如果你是普通用户，推荐直接使用下面这条命令自动安装，无需手动下载任何安装包：
+### 自动安装（推荐）
+
+复制以下命令到 PowerShell 中执行，即可自动下载并安装：
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://github.com/ding9736/DeskLane/releases/latest/download/install.ps1 | iex"
 ```
 
-适用环境：
+### 安装步骤
 
-- Windows PowerShell
-- PowerShell 7
-- CMD 中同样可直接执行上面的命令
+| 步骤 | 操作 | 说明 |
+| --- | --- | --- |
+| **1** | 打开 PowerShell | 按 `Win` 键，输入 `PowerShell`，右键选择「以管理员身份运行」 |
+| **2** | 复制命令 | 选中上方代码块中的命令，按 `Ctrl + C` |
+| **3** | 粘贴执行 | 在 PowerShell 窗口中右键点击（自动粘贴），按 `Enter` |
+| **4** | 等待完成 | 脚本会自动下载、校验并启动安装程序 |
+| **5** | 启动程序 | 双击桌面「DeskLane 远程桌面」快捷方式 |
 
-## 安装包下载
+---
 
-如果你更习惯手动下载安装包，可使用以下文件：
+> **注意**：如果提示「无法加载文件，因为在此系统上禁止运行脚本」，请先执行：
+>
+> ```powershell
+> Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
+> ```
 
-- Windows 安装版：`DeskLane_window_setup.exe`
-- Windows MSI：`DeskLane_window.msi`
+### 手动下载安装
 
-下载地址：
+如果需要手动下载安装包：
 
-- 安装版：https://github.com/ding9736/DeskLane/releases/latest/download/DeskLane_window_setup.exe
-- MSI：https://github.com/ding9736/DeskLane/releases/latest/download/DeskLane_window.msi
+| 文件 | 说明 | 下载 |
+| --- | --- | --- |
+| `DeskLane_window_setup.exe` | 图形化安装向导 | [下载](https://github.com/ding9736/DeskLane/releases/latest/download/DeskLane_window_setup.exe) |
+| `DeskLane_window.msi` | MSI 安装包（企业部署） | [下载](https://github.com/ding9736/DeskLane/releases/latest/download/DeskLane_window.msi) |
 
-## 适合谁使用
+---
 
-- 想快速连接和控制远程设备的普通用户
-- 希望优先使用图形安装向导的桌面用户
-- 需要 MSI 进行批量部署或静默安装的企业运维人员
+## 适用人群
+
+| 用户类型 | 说明 |
+| --- | --- |
+| 普通用户 | 想快速连接和控制远程设备 |
+| 桌面用户 | 希望使用图形化安装向导 |
+| 企业运维 | 需要 MSI 进行批量部署或静默安装 |
 
 ## 当前发布内容
 
 本次发布包含以下资产：
 
-- `DeskLane_window_setup.exe`
-- `DeskLane_window.msi`
-- `release-manifest.yaml`
-- `install.ps1`
-- `install.sh`
-- `README.md`
-
-## 一键安装命令
-
-PowerShell：
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://github.com/ding9736/DeskLane/releases/latest/download/install.ps1 | iex"
-```
-
-CMD：
-
-```cmd
-powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://github.com/ding9736/DeskLane/releases/latest/download/install.ps1 | iex"
-```
-
-说明：
-
-- 上述命令会自动读取最新发布清单
-- 自动下载适用的 Windows 安装包
-- 自动校验文件完整性
-- 然后启动安装程序
+- `DeskLane_window_setup.exe` — 图形化安装程序
+- `DeskLane_window.msi` — MSI 安装包
+- `install.ps1` — PowerShell 安装脚本
+- `install.sh` — Shell 安装脚本
+- `README.md` — 本说明文档
 
 ## 安装前预览（可选）
 
@@ -155,4 +148,5 @@ Invoke-WebRequest -UseBasicParsing "https://github.com/ding9736/DeskLane/release
 GitHub Releases：
 
 https://github.com/ding9736/DeskLane/releases
+
 
