@@ -16,12 +16,37 @@ CMD 也可以直接执行同一条命令：
 powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://github.com/ding9736/DeskLane/releases/latest/download/install.ps1 | iex"
 ```
 
+这条命令会自动：
+
+- 读取最新 `release-manifest.yaml`
+- 下载对应的 Windows 安装包
+- 校验 `sha256`
+- 启动安装程序
+
+## 安装前预览（可选）
+
+如果你想先确认将要安装的版本、下载地址和校验值，而不立刻启动安装程序，可以执行：
+
+```powershell
+Invoke-WebRequest -UseBasicParsing "https://github.com/ding9736/DeskLane/releases/latest/download/install.ps1" -OutFile .\install.ps1
+.\install.ps1 -DryRun
+```
+
 ## 手动下载安装
 
 - Windows 安装版：
   `https://github.com/ding9736/DeskLane/releases/latest/download/DeskLane_window_setup.exe`
 - Windows MSI：
   `https://github.com/ding9736/DeskLane/releases/latest/download/DeskLane_window.msi`
+
+## 当前发布资产
+
+- `DeskLane_window_setup.exe`
+- `DeskLane_window.msi`
+- `release-manifest.yaml`
+- `install.ps1`
+- `install.sh`
+- `README.md`
 
 ## Release 页面
 
